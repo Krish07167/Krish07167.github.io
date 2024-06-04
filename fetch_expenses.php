@@ -1,12 +1,11 @@
 <?php
-// Replace "your_username", "your_password", "your_database" with your MySQL credentials
 $servername = "localhost";
 $username = "root";
-$password = "";
-$database = "krrish";
+$password = "1601";
+$dbname = "expense_tracker";
 
 // Create connection
-$conn = new mysqli($servername, $username, $password, $database);
+$conn = new mysqli($servername, $username, $password, $dbname);
 
 // Check connection
 if ($conn->connect_error) {
@@ -16,13 +15,15 @@ if ($conn->connect_error) {
 $sql = "SELECT * FROM expenses";
 $result = $conn->query($sql);
 
+$expenses = array();
+
 if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
-        echo "<p>" . $row["description"] . " - $" . $row["amount"] . "</p>";
+        $expenses[] = $row;
     }
-} else {
-    echo "No expenses found";
 }
 
 $conn->close();
+
+echo json_encode($expenses);
 ?>
