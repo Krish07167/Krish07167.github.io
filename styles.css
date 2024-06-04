@@ -1,0 +1,20 @@
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+input[type="text"],
+input[type="number"],
+button {
+    display: block;
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 5px 10px;
+}
+
+#expenseList {
+    margin-top: 20px;
+}
