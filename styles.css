@@ -27,7 +27,7 @@ section {
 }
 
 table{
-    width: 300px;
+    width: 100px;
 }
 table, th, td {
     border: 1px solid black;
